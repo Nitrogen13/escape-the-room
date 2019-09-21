@@ -1,0 +1,86 @@
+cabal-version: 1.24
+
+-- This file has been generated from package.yaml by hpack version 0.32.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4872b4e6a6aea04eb4f7efedacfc7bfe7511718f2de6823175831fd7c6bf4f11
+
+name:           escape-the-room
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/iu-haskell-fall-2018/my-project#readme>
+author:         Ilgizar Murzakov
+maintainer:     i.murzakov@innopolis.ru
+copyright:      2019 Innopolis University
+license:        BSD3
+license-file:   LICENSE
+build-type:     Custom
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base
+    , cabal-doctest >=1.0.2 && <1.1
+    , codeworld-api ==0.3.1
+
+library
+  exposed-modules:
+      EscapeTheRoom
+      EscapeTheRoom.Levels
+  other-modules:
+      Paths_escape_the_room
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fno-warn-type-defaults
+  build-depends:
+      base >=4.7 && <5
+    , codeworld-api ==0.3.1
+  default-language: Haskell2010
+
+executable escape-the-room
+  main-is: Main.hs
+  other-modules:
+      Paths_escape_the_room
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -fno-warn-type-defaults -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , codeworld-api ==0.3.1
+    , escape-the-room
+  default-language: Haskell2010
+
+test-suite doctests
+  type: exitcode-stdio-1.0
+  main-is: doctests.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -fno-warn-type-defaults
+  build-depends:
+      Glob
+    , QuickCheck
+    , base
+    , codeworld-api ==0.3.1
+    , doctest
+    , template-haskell
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      MyProjectSpec
+      Paths_escape_the_room
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -fno-warn-type-defaults -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , codeworld-api ==0.3.1
+    , hspec
+  default-language: Haskell2010
