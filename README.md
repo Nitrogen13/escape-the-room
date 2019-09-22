@@ -1,4 +1,4 @@
-# project-template
+# escape-the-room
 
 [![Build Status](https://travis-ci.org/iu-haskell-spring-2019/project-template.svg?branch=master)](https://travis-ci.org/iu-haskell-spring-2019/project-template)
 
@@ -33,7 +33,7 @@ stack exec my-project-exe
 During development it is recommended a combination of `build` and `exec`:
 
 ```
-stack build && stack exec my-project-exe
+stack build && stack exec escape-the-room
 ```
 
 Alternatively, you can run
